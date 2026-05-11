@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 8%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 25% 8%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 270 50% 40%;
+    --secondary-foreground: 180 100% 95%;
+
+    --muted: 220 20% 20%;
+    --muted-foreground: 180 30% 70%;
+
+    --accent: 45 100% 60%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 180 100% 95%;
+
+    --border: 180 50% 20%;
+    --input: 180 50% 20%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom mystical colors */
+    --glow-cyan: 180 100% 50%;
+    --glow-purple: 270 70% 60%;
+    --glow-gold: 45 100% 60%;
+    --shadow-dark: 220 30% 5%;
+    
+    /* Gradients */
+    --gradient-mystical: linear-gradient(135deg, hsl(180 100% 30%), hsl(270 70% 40%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 25% 8% / 0.9), hsl(220 25% 8%));
+    
+    /* Shadows and glows */
+    --glow-cyan-shadow: 0 0 40px hsl(180 100% 50% / 0.5);
+    --glow-purple-shadow: 0 0 60px hsl(270 70% 60% / 0.4);
+    --text-glow: 0 0 20px hsl(180 100% 70% / 0.6);
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 25% 8%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 270 50% 40%;
+    --secondary-foreground: 180 100% 95%;
+
+    --muted: 220 20% 20%;
+    --muted-foreground: 180 30% 70%;
+
+    --accent: 45 100% 60%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 180 100% 95%;
+
+    --border: 180 50% 20%;
+    --input: 180 50% 20%;
+    --ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .text-glow {
+    text-shadow: var(--text-glow);
+  }
+
+  .glow-cyan {
+    box-shadow: var(--glow-cyan-shadow);
+  }
+
+  .glow-purple {
+    box-shadow: var(--glow-purple-shadow);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
